@@ -1,0 +1,27 @@
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+*{
+	font-size: 26px;
+}
+input{
+	height: 40px;
+	width: 82px;
+	background-color: white;
+	color: grey;
+	margin: 20px 0 5px 0;
+}
+button{
+	height: 40px;
+	width: 60px;
+	background-color: red;
+	color: black;
+	margin: 0px 0px 20px 0px;
+}
+#caFrame{
+	padding: 10px 30px;
+	background-color: black;
+}

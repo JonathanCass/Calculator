@@ -1,0 +1,28 @@
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+body{
+	padding:30px;
+	background-color: #111111;
+	font-size: 22px;
+	font-family: times;
+}
+.operations{
+	background-color: red;
+	color: black;
+}
+.digits{
+	background-color: #551a8b;
+	color: white;
+}
+.operations, .digits{
+	width: 70px;
+	height: 70px;
+}
+#num_input{
+	width:220px;
+	margin-bottom: 10px;
+}

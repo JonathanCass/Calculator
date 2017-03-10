@@ -6,6 +6,8 @@ $(document).ready(function(){
 	var total = 0
 	var sOp = "+"
 	
+	
+  
 	$("#clearB").click(function(){
 		$("#output").val("")
 		outputString = ""
@@ -15,16 +17,13 @@ $(document).ready(function(){
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')
 		$("#output").val(outputString)
-		$(this).animate({
-    color: "green"
-  }, 5000, function() {
-    // Animation complete.
-  });
+		$(this).css("background-color", "orange")
 	})
 	$(".operations").click(function(){
 		outputString += " "+ $(this).attr('name') +" "
 		$("#output").val(outputString)
-		$(this).css("background-color", "green")
+		$(this).animate({backgroundColor: "#59BAE3"}, 333, function() {$(this).toggle( "explode" ) });
+		$(this).toggle( "explode" )
 	})
 	$("#equals").click(function(){
 		outputArray = outputString.split(" ")

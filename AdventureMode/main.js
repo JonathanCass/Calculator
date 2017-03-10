@@ -59,7 +59,8 @@ $(document).ready(function(){
 			}
 			$("#output").val(actualOutput)
 			outputArray=[]
-			output1 = ""
+			output1 = actualOutput
+			outputArray[0] = actualOutput
 			oaCounter = 0
 			checker = true 
 		})

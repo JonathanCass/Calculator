@@ -9,11 +9,17 @@ $(document).ready(function(){
 	
   
 	$("#clearB").click(function(){
-		$("#output").val("")
-		outputString = ""
+		
 		$(".digits").animate({backgroundColor : "#551a8b"},1000,function(){})
 		$(".operations").animate({backgroundColor : "red"},1000,function(){})
-		numCheck = false
+		$("#output").animate({color: "#FFFFFF"}, 1000, function() {$("#output").animate({color : "#000000"},1000,function(){})});
+		
+		function myReset(){
+			$("#output").val("0")
+			outputString = "0"
+			numCheck = false}		
+		setTimeout(myReset,1000)	
+		
 	})
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')

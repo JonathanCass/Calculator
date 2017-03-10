@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	var outputString = ""
 	var outputArray = []
 	var actualOutput = 0
@@ -7,19 +6,15 @@ $(document).ready(function(){
 	var sOp = "+"
 	var numCheck = false // Prevents entering operations unless previous input was a number
 	
-  
-	$("#clearB").click(function(){
-		
+  	$("#clearB").click(function(){
 		$(".digits").animate({backgroundColor : "#551a8b"},1000,function(){})
 		$(".operations").animate({backgroundColor : "red"},1000,function(){})
 		$("#output").animate({color: "#FFFFFF"}, 1000, function() {$("#output").animate({color : "#000000"},1000,function(){})});
-		
 		function myReset(){
 			$("#output").val("0")
 			outputString = "0"
 			numCheck = false}		
-		setTimeout(myReset,1000)	
-		
+		setTimeout(myReset,1000)			
 	})
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')

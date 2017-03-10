@@ -8,11 +8,10 @@ body{
 	padding:30px;
 	background-color: white;
 	font-size: 22px;
-	font-family: times;
 }
 .operations, #clearB, #equals, .digits{
 	background-color: red;
-	color: black;
+	color: yellow;
 	width: 70px;
 	height: 70px;
 }
@@ -23,8 +22,7 @@ body{
 #output{
 	height: 70px;
 	width:220px;
-	margin-bottom: 10px;
-	color:black;	
+	margin-bottom: 10px;	
 }
 #frame{
 	background-color: #111111;

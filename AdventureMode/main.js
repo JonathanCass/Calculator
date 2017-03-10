@@ -5,25 +5,33 @@ $(document).ready(function(){
 	var actualOutput = 0
 	var total = 0
 	var sOp = "+"
-	
+	var numCheck = false // Prevents entering operations unless previous input was a number
 	
   
 	$("#clearB").click(function(){
 		$("#output").val("")
 		outputString = ""
-		$(".digits").animate({backgroundColor : "#551a8b"},666,function(){})
-		$(".operations").animate({backgroundColor : "red"},666,function(){})
+		$(".digits").animate({backgroundColor : "#551a8b"},1000,function(){})
+		$(".operations").animate({backgroundColor : "red"},1000,function(){})
+		numCheck = false
 	})
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')
 		$("#output").val(outputString)
-		$(this).css("background-color", "orange")
+		$(this).animate({backgroundColor : "#D35400"},222,function(){})
+		numCheck = true
 	})
 	$(".operations").click(function(){
-		outputString += " "+ $(this).attr('name') +" "
-		$("#output").val(outputString)
-		$(this).animate({backgroundColor: "#59BAE3"}, 333, function() {$(this).toggle( "explode" ) });
-		$(this).toggle( "explode" )
+		if(numCheck){
+			outputString += " "+ $(this).attr('name') +" "
+			$("#output").val(outputString)
+			$(this).animate({backgroundColor: "#59BAE3"}, 333, function() {$(this).toggle( "explode" ) });
+			$(this).toggle( "explode" )
+			numCheck = false
+		}
+		else{
+			alert("ERROR can not input operation!")
+		}
 	})
 	$("#equals").click(function(){
 		outputArray = outputString.split(" ")
@@ -53,7 +61,7 @@ $(document).ready(function(){
 		})
 		outputString = actualOutput
 		$("#output").val(outputString)
-		$(".digits").animate({backgroundColor : "#551a8b"},1000,function(){})
-		$(".operations").animate({backgroundColor : "red"},1000,function(){})
+		$(".digits").animate({backgroundColor : "#551a8b"},1200,function(){})
+		$(".operations").animate({backgroundColor : "red"},1200,function(){})
 	})
 })

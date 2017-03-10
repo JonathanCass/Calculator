@@ -8,18 +8,20 @@ $(document).ready(function(){
 	
 	$("#clearB").click(function(){
 		$("#output").val("")
-		outputArray=[]
 		outputString = ""
+		$(".digits").css("background-color","#551a8b")
+		$(".operations").css("background-color","red")
 	})
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')
 		$("#output").val(outputString)
+		$(this).css("background-color", "orange")
 	})
 	$(".operations").click(function(){
 		outputString += " "+ $(this).attr('name') +" "
 		$("#output").val(outputString)
+		$(this).css("background-color", "green")
 	})
-
 	$("#equals").click(function(){
 		outputArray = outputString.split(" ")
 		console.log(outputArray)
@@ -48,5 +50,7 @@ $(document).ready(function(){
 		})
 		outputString = actualOutput
 		$("#output").val(outputString)
+		$(".digits").css("background-color","#551a8b")
+		$(".operations").css("background-color","red")
 	})
 })

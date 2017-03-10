@@ -6,7 +6,7 @@ html {
 }
 body{
 	padding:30px;
-	background-color: #111111;
+	background-color: white;
 	font-size: 22px;
 	font-family: times;
 }
@@ -25,4 +25,10 @@ body{
 	width:220px;
 	margin-bottom: 10px;
 	color:black;
+}
+#frame{
+	background-color: #111111;
+	padding: 20px;
+	border: solid grey 10px;
+	float: left;
 }

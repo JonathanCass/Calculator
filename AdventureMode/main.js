@@ -26,22 +26,22 @@ $(document).ready(function(){
 		actualOutput = outputArray.reduce(function(a,b){
 			if (b == "+" || b == "-" || b == "X" || b == "/"){
 				sOp = b
-				total = a
+				total = Number(a)
 				return a
 			}
 			else{
 				switch(sOp){
 					case "+":
-						total +=  Number(b)
+						total = Number(total) + Number(b)
 						return total
 					case "-":
-						total -=  Number(b)
+						total = Number(total) - Number(b)
 						return total
 					case "X":
-						total *=  Number(b)
+						total = Number(total) * Number(b)
 						return total
 					case "/":
-						total /=  Number(b)
+						total = Number(total) / Number(b)
 						return total
 				}
 			}
@@ -49,5 +49,4 @@ $(document).ready(function(){
 		outputString = actualOutput
 		$("#output").val(outputString)
 	})
-			
 })

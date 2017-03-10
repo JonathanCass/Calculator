@@ -1,68 +1,53 @@
 $(document).ready(function(){
 
-	var output1 = ""
+	var outputString = ""
 	var outputArray = []
 	var actualOutput = 0
-	var oaCounter = 0
-	var checker = true //when checker is true calculator is fresh / cleared 
-	// therefore the array is empty and can be pushed to, after that set to false and numbers are stacked in
-	// when stack is cleared or total is calculated then set checker to false
-
+	var total = 0
+	var sOp = "+"
 	
 	$("#clearB").click(function(){
-		console.log(outputArray)
 		$("#output").val("")
 		outputArray=[]
-		output1 = ""
-		oaCounter = 0
-		checker = true 
+		outputString = ""
 	})
 	$(".digits").click(function(){
-		output1 += $(this).attr('name')
-		if(checker){
-			outputArray.push($(this).attr('name'))
-			checker=false
-		}
-		else{
-			outputArray[oaCounter] += $(this).attr('name')
-		}
-		$("#output").val(output1)
-		console.log(oaCounter)
-		console.log(outputArray)
+		outputString += $(this).attr('name')
+		$("#output").val(outputString)
 	})
 	$(".operations").click(function(){
-		output1 += " "+ $(this).attr('name') +" "
-		outputArray.push($(this).attr('name'))
-		$("#output").val(output1)
-		oaCounter += 2
-		checker = true
-		console.log(oaCounter)
-		console.log(outputArray)
+		outputString += " "+ $(this).attr('name') +" "
+		$("#output").val(outputString)
 	})
+
 	$("#equals").click(function(){
-		$("#output").val("")
-		actualOutput = Number(outputArray[0])
-		for( i=1; i < outputArray.length -1 ; i += 2)
-			switch(outputArray[i]){
-				case "+":
-					actualOutput += Number(outputArray[i+1])
-					break;
-				case "-":
-					actualOutput -= Number(outputArray[i+1])
-					break;
-				case "X":
-					actualOutput *= Number(outputArray[i+1])
-					break;
-				case "/":
-					actualOutput /= Number(outputArray[i+1])
-					break;
+		outputArray = outputString.split(" ")
+		console.log(outputArray)
+		actualOutput = outputArray.reduce(function(a,b){
+			if (b == "+" || b == "-" || b == "X" || b == "/"){
+				sOp = b
+				total = a
+				return a
 			}
-			$("#output").val(actualOutput)
-			outputArray=[]
-			output1 = actualOutput
-			outputArray[0] = actualOutput
-			oaCounter = 0
-			checker = true 
+			else{
+				switch(sOp){
+					case "+":
+						total +=  Number(b)
+						return total
+					case "-":
+						total -=  Number(b)
+						return total
+					case "X":
+						total *=  Number(b)
+						return total
+					case "/":
+						total /=  Number(b)
+						return total
+				}
+			}
 		})
+		outputString = actualOutput
+		$("#output").val(outputString)
+	})
 			
 })

@@ -8,6 +8,8 @@ body{
 	padding:30px;
 	background-color: white;
 	font-size: 22px;
+	background-image: url("calcBackground.png");
+	background-repeat: no-repeat;
 }
 .operations, #clearB, #equals, .digits{
 	background-color: red;
@@ -25,8 +27,13 @@ body{
 	margin-bottom: 10px;	
 }
 #frame{
-	background-color: #111111;
-	padding: 20px;
-	border: solid grey 10px;
+	margin-left: 325px;
+	background-color: black;
+	padding: 10px;
+	border: solid #908CDF 5px;
 	float: left;
+	border-bottom: 0px;
+	margin-top: 10px;
+	padding-left:19.5px;
+	padding-right:19.5px;
 }

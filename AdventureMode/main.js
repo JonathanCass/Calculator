@@ -15,7 +15,11 @@ $(document).ready(function(){
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')
 		$("#output").val(outputString)
-		$(this).css("background-color", "orange")
+		$(this).animate({
+    color: "green"
+  }, 5000, function() {
+    // Animation complete.
+  });
 	})
 	$(".operations").click(function(){
 		outputString += " "+ $(this).attr('name') +" "

@@ -10,7 +10,7 @@ body{
 	font-size: 22px;
 	font-family: times;
 }
-.operations{
+.operations, #clearB{
 	background-color: red;
 	color: black;
 }
@@ -18,7 +18,7 @@ body{
 	background-color: #551a8b;
 	color: white;
 }
-.operations, .digits{
+.operations, .digits, #clearB{
 	width: 70px;
 	height: 70px;
 }

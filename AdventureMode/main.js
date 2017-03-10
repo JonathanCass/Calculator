@@ -11,8 +11,8 @@ $(document).ready(function(){
 	$("#clearB").click(function(){
 		$("#output").val("")
 		outputString = ""
-		$(".digits").css("background-color","#551a8b")
-		$(".operations").css("background-color","red")
+		$(".digits").animate({backgroundColor : "#551a8b"},666,function(){})
+		$(".operations").animate({backgroundColor : "red"},666,function(){})
 	})
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')
@@ -53,7 +53,7 @@ $(document).ready(function(){
 		})
 		outputString = actualOutput
 		$("#output").val(outputString)
-		$(".digits").css("background-color","#551a8b")
-		$(".operations").css("background-color","red")
+		$(".digits").animate({backgroundColor : "#551a8b"},1000,function(){})
+		$(".operations").animate({backgroundColor : "red"},1000,function(){})
 	})
 })

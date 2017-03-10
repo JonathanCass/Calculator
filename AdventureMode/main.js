@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-	var inputString =""
-	var input1
-	var input2
 	var output1 = ""
 	var outputArray = []
 	var actualOutput = 0
@@ -34,7 +31,7 @@ $(document).ready(function(){
 		console.log(outputArray)
 	})
 	$(".operations").click(function(){
-		output1 += $(this).attr('name')
+		output1 += " "+ $(this).attr('name') +" "
 		outputArray.push($(this).attr('name'))
 		$("#output").val(output1)
 		oaCounter += 2
@@ -61,7 +58,10 @@ $(document).ready(function(){
 					break;
 			}
 			$("#output").val(actualOutput)
-			
+			outputArray=[]
+			output1 = ""
+			oaCounter = 0
+			checker = true 
 		})
 			
 })

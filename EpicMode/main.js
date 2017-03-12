@@ -6,11 +6,13 @@ $(document).ready(function(){
 	var sOp = "+"
 	var numCheck = false // Prevents entering operations unless previous input was a number
 	var rebel = true
+	var digitB = "#551a8b"
+	var operB = "red"
 	document.getElementById('eCSS').disabled = true
 
   	$("#clearB").click(function(){
-		$(".digits").animate({backgroundColor : "#551a8b"},1000,function(){})
-		$(".operations").animate({backgroundColor : "red"},1000,function(){})
+		$(".digits").animate({backgroundColor : digitB},1000,function(){})
+		$(".operations").animate({backgroundColor : operB},1000,function(){})
 		$("#output").animate({color: "#FFFFFF"}, 1000, function() {$("#output").animate({color : "#000000"},1000,function(){})});
 		function myReset(){
 			$("#output").val("0")
@@ -64,20 +66,27 @@ $(document).ready(function(){
 		})
 		outputString = actualOutput
 		$("#output").val(outputString)
-		$(".digits").animate({backgroundColor : "#551a8b"},1200,function(){})
-		$(".operations").animate({backgroundColor : "red"},1200,function(){})
+		$(".digits").animate({backgroundColor : digitB},1200,function(){})
+		$(".operations").animate({backgroundColor : operB},1200,function(){})
 	})
 	$("#themeSwitch").click(function(){
-		
 		if(rebel){
 			document.getElementById('rCSS').disabled = true
 			document.getElementById('eCSS').disabled = false
+			digitB = "green"
+			operB = "black"
 			rebel = false
+			$(".digits").animate({backgroundColor : digitB},1000,function(){})
+			$(".operations").animate({backgroundColor : operB},1000,function(){})
 		}
 		else{
 			document.getElementById('rCSS').disabled = false
 			document.getElementById('eCSS').disabled = true
+			digitB = "#551a8b"
+		 	operB = "red"
 			rebel = true
+			$(".digits").animate({backgroundColor : digitB},1000,function(){})
+			$(".operations").animate({backgroundColor : operB},1000,function(){})
 		}
 	})
 })

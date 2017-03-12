@@ -3,12 +3,14 @@ $(document).ready(function(){
 	var outputArray = []
 	var actualOutput = 0
 	var total = 0
-	var sOp = "+"
+	var sOp = "+"		// stores operator when reading input string in reduce operation
 	var numCheck = false // Prevents entering operations unless previous input was a number
-	var rebel = true
-	var digitB = "#551a8b"
-	var operB = "red"
-	document.getElementById('eCSS').disabled = true
+	var rebel = true		// tracks theme true for rebel, false for imperial
+	var digitB = "#551a8b"   // color of digit buttons
+	var operB = "red"	//color of operations buttons
+	var digitC = "#943919"    //colors digits change when clicked
+
+	document.getElementById('eCSS').disabled = true 
 
   	$("#clearB").click(function(){
 		$(".digits").animate({backgroundColor : digitB},1000,function(){})
@@ -23,8 +25,9 @@ $(document).ready(function(){
 	$(".digits").click(function(){
 		outputString += $(this).attr('name')
 		$("#output").val(outputString)
-		$(this).animate({backgroundColor : "#D35400"},222,function(){})
+		$(this).animate({backgroundColor : digitC},222,function(){})
 		numCheck = true
+		
 	})
 	$(".operations").click(function(){
 		if(numCheck){
@@ -75,6 +78,7 @@ $(document).ready(function(){
 			document.getElementById('eCSS').disabled = false
 			digitB = "green"
 			operB = "black"
+			digitC = "red"
 			rebel = false
 			$(".digits").animate({backgroundColor : digitB},1000,function(){})
 			$(".operations").animate({backgroundColor : operB},1000,function(){})
@@ -84,6 +88,7 @@ $(document).ready(function(){
 			document.getElementById('eCSS').disabled = true
 			digitB = "#551a8b"
 		 	operB = "red"
+		 	digitC = "#943919" 
 			rebel = true
 			$(".digits").animate({backgroundColor : digitB},1000,function(){})
 			$(".operations").animate({backgroundColor : operB},1000,function(){})

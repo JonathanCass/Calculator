@@ -5,7 +5,9 @@ $(document).ready(function(){
 	var total = 0
 	var sOp = "+"
 	var numCheck = false // Prevents entering operations unless previous input was a number
-	
+	var rebel = true
+	document.getElementById('eCSS').disabled = true
+
   	$("#clearB").click(function(){
 		$(".digits").animate({backgroundColor : "#551a8b"},1000,function(){})
 		$(".operations").animate({backgroundColor : "red"},1000,function(){})
@@ -64,5 +66,18 @@ $(document).ready(function(){
 		$("#output").val(outputString)
 		$(".digits").animate({backgroundColor : "#551a8b"},1200,function(){})
 		$(".operations").animate({backgroundColor : "red"},1200,function(){})
+	})
+	$("#themeSwitch").click(function(){
+		
+		if(rebel){
+			document.getElementById('rCSS').disabled = true
+			document.getElementById('eCSS').disabled = false
+			rebel = false
+		}
+		else{
+			document.getElementById('rCSS').disabled = false
+			document.getElementById('eCSS').disabled = true
+			rebel = true
+		}
 	})
 })

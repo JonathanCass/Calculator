@@ -5,55 +5,52 @@ html {
 	box-sizing: inherit;
 }
 body{
-	padding:30px;
 	background-color: white;
 	font-size: 22px;
-	background-image: url("calcBackground.png");
+	background-image: url("imperialBackground.jpg");
 	background-repeat: no-repeat;
 }
 .operations, #clearB, #equals, .digits{
-	background-color: red;
+	background-color: black;
 	color: yellow;
-	width: 70px;
+	width: 74px;
 	height: 70px;
 }
 .digits{
-	background-color: #551a8b;
+	background-color: green;
 	color: white;
 }
 #output{
 	height: 70px;
-	width:220px;
+	width: 229px;
 	margin-bottom: 10px;	
 }
 #frame{
-	margin-left: 325px;
-	background-color: black;
-	padding: 10px;
-	border: solid #908CDF 5px;
+	margin-left: 120px;
+	background-color: #353744;
 	float: left;
 	border-bottom: 0px;
-	margin-top: 10px;
 	padding-left:19.5px;
 	padding-right:19.5px;
 }
 #themeSwitch{
-	height: 125px;
-	width: 125px;
-	float: right;
-	position: relative;
-	left: -540px;
-	top: 40px;
-	background-image: url("impseal.jpg");
+	height: 138px;
+	width: 138px;
+	float: left;
+	clear: left;
+	margin-left: 120px;
+	margin-top: 60px;
+	background-image: url("rebel.jpeg");
+	background-position: center;
 }
 #impMotto{
-	color: white;
-	font-size: 20px;
-	position: relative;
-	top: 245px;
-	right: 250px;
-	text-align: center;
+	visibility: hidden;
 }
 #rebMotto{
-	visibility: hidden;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	clear: left;
+	float:left;
+	margin-left: 85px;
 }

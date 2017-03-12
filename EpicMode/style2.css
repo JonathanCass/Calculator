@@ -43,14 +43,3 @@ body{
 	background-image: url("rebel.jpeg");
 	background-position: center;
 }
-#impMotto{
-	visibility: hidden;
-}
-#rebMotto{
-	color: white;
-	font-size: 20px;
-	text-align: center;
-	clear: left;
-	float:left;
-	margin-left: 85px;
-}

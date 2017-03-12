@@ -38,22 +38,14 @@ body{
 	padding-right:19.5px;
 }
 #themeSwitch{
-	height: 125px;
-	width: 125px;
+	height: 138px;
+	width: 138px;
 	float: right;
 	position: relative;
-	left: -540px;
+	left: -1110px;
 	top: 40px;
 	background-image: url("impseal.jpg");
-}
-#impMotto{
-	color: white;
-	font-size: 20px;
-	position: relative;
-	top: 245px;
-	right: 250px;
-	text-align: center;
-}
-#rebMotto{
-	visibility: hidden;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: black;
 }
